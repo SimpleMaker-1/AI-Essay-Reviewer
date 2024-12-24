@@ -1,3 +1,4 @@
+
 document.getElementById('submit-btn').addEventListener('click', function() {
     const essay = document.getElementById('essay').value;
     const resultDiv = document.getElementById('result');
@@ -17,19 +18,17 @@ document.getElementById('submit-btn').addEventListener('click', function() {
         body: JSON.stringify({ essay })
     })
     .then(response => {
-        // Check if the response status is OK (200)
         if (!response.ok) {
-            throw new Error('Network response was not ok');
+            //this better not happen. if stuff REALLY breaks then also log the response value. not necessary for this small project
+            throw new Error('Network response was not ok ');
         }
         return response.json();
     })
     .then(data => {
-        // Handle the response and display feedback
-        if (data.result) {
-            resultDiv.innerHTML = `Feedback: ${data.result}`;
-        } else {
-            resultDiv.innerHTML = 'Error: Unable to get feedback. 1';
-        }
+        
+        const feedback = data.result || 'No feedback available';
+        resultDiv.innerHTML = `Feedback: ${feedback}`;
+        resultDiv.style.display = 'block';  // Show the result
     })
     .catch(error => {
         console.error('Error:', error);
