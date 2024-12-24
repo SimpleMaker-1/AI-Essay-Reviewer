@@ -14,13 +14,19 @@ document.getElementById('submit-btn').addEventListener('click', function() {
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ essay }),
+        body: JSON.stringify({ essay })
     })
-    .then(response => response.json())
+    .then(response => {
+        // Check if the response status is OK (200)
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
     .then(data => {
         // Handle the response and display feedback
-        if (data.feedback) {
-            resultDiv.innerHTML = `Feedback: ${data.feedback}`;
+        if (data.result) {
+            resultDiv.innerHTML = `Feedback: ${data.result}`;
         } else {
             resultDiv.innerHTML = 'Error: Unable to get feedback.';
         }
