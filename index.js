@@ -26,7 +26,7 @@ document.getElementById('submit-btn').addEventListener('click', function() {
     .then(data => {
         // Handle the response and display feedback
         if (data.result) {
-            resultDiv.innerHTML = `Feedback: ${data.feedback}`;
+            resultDiv.innerHTML = `Feedback: ${data.result}`;
         } else {
             resultDiv.innerHTML = 'Error: Unable to get feedback. 1';
         }
