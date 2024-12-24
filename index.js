@@ -28,7 +28,7 @@ document.getElementById('submit-btn').addEventListener('click', function() {
         if (data.result) {
             resultDiv.innerHTML = `Feedback: ${data.feedback}`;
         } else {
-            resultDiv.innerHTML = 'Error: Unable to get feedback.';
+            resultDiv.innerHTML = 'Error: Unable to get feedback. 1';
         }
     })
     .catch(error => {
