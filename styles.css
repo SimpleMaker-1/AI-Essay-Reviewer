@@ -13,58 +13,68 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    padding: 10px; /* Add padding for small screens */
 }
 
+/* Container Styling */
 .container {
     background-color: #fff;
-    padding: 30px;
+    padding: 25px;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     max-width: 600px;
     width: 100%;
     text-align: center;
+    margin: 0 auto;
 }
 
+/* Headings */
 h1 {
-    font-size: 24px;
+    font-size: 2rem; /* Use relative font size */
     color: #4CAF50;
+    margin-bottom: 10px;
 }
 
 p {
-    font-size: 16px;
+    font-size: 1rem; /* Use relative font size */
     color: #555;
     margin-bottom: 20px;
 }
 
+/* Textarea */
 textarea {
     width: 100%;
     padding: 15px;
-    font-size: 16px;
+    font-size: 1rem; /* Use relative font size */
     border-radius: 8px;
     border: 1px solid #ddd;
     resize: none;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
+    max-width: 100%; /* Ensure it doesn't overflow */
 }
 
+/* Button */
 button {
     background-color: #4CAF50;
     color: white;
-    font-size: 18px;
+    font-size: 1.1rem;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    width: auto;
 }
 
 button:hover {
     background-color: #45a049;
 }
 
+/* Result Styling */
 .result {
     margin-top: 20px;
-    font-size: 18px;
+    font-size: 1.1rem;
     color: #333;
     background-color: #f9f9f9;
     padding: 15px;
@@ -73,6 +83,64 @@ button:hover {
     display: none;
 }
 
-.error {
-    color: red;
+/* Media Queries for Responsiveness */
+
+/* For tablets and small desktops */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+        max-width: 100%;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    textarea {
+        font-size: 0.9rem;
+        padding: 12px;
+    }
+
+    button {
+        font-size: 1rem;
+        padding: 8px 16px;
+    }
+}
+
+/* For mobile devices */
+@media (max-width: 480px) {
+    body {
+        padding: 15px;
+    }
+
+    .container {
+        padding: 10px;
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    textarea {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+
+    .result {
+        font-size: 1rem;
+    }
 }
